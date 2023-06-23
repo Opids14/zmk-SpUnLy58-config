@@ -1,6 +1,6 @@
 if SHIELD_SPUNLY58
 
 config ZMK_KEYBOARD_NAME
-    default "SpUnLy58"
+    default "spunly58"
 
 endif
