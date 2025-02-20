@@ -10,6 +10,13 @@
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
         diode-direction = "col2row";
+
+	row-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+               	    <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+           	    <&gpio1 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&gpio1 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+
         col-gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH)>,
                     <&pro_micro 3 (GPIO_ACTIVE_HIGH)>,
                     <&pro_micro 4 (GPIO_ACTIVE_HIGH)>,
@@ -25,16 +32,13 @@
                     <&pro_micro 15 (GPIO_ACTIVE_HIGH)>,
                     <&pro_micro 14(GPIO_ACTIVE_HIGH)>,
                     <&pro_micro 16 (GPIO_ACTIVE_HIGH)>;
-        row-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-               	    <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-           	    <&gpio1 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&gpio1 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        
     };
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
+	rows = <5>;
         columns = <15>;
-        rows = <5>;
+        
 // | SW1  | SW2  | SW3  | SW4  | SW5  | SW6  |                   | SW7  | SW8  | SW9  | SW10 | SW11 | SW12 |
 // | SW13 | SW14 | SW15 | SW16 | SW17 | SW18 |                   | SW19 | SW20 | SW21 | SW22 | SW23 | SW24 |
 // | SW25 | SW26 | SW27 | SW28 | SW29 | SW30 | SW31 |SW32 | SW33 | SW34 | SW35 | SW36 | SW37 | SW38 | SW39 |
