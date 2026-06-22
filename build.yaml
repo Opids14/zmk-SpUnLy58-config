@@ -12,9 +12,6 @@
 #     shield: reviung41
 #
 ---
----
 include:
   - board: nice_nano@2.0.0
-    shield: spunly58_left
-  - board: nice_nano@2.0.0
-    shield: spunly58_right
+    shield: spunly58
